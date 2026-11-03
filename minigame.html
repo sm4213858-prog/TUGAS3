@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mini game - Rawat Tanaman</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navigasi">
+    <a href="index.html">beranda</a> |
+    <a href="kontak.html">kontak</a> |
+    <a href="galeri.html">galeri</a> |
+    <a href="minigame.html" class="aktif">mini game</a> |
+  </nav>
+  
+  <h1>Rawat Tanaman</h1>
+  
+  <!-- area game -->
+  <div class="kartu-profil">
+    <div id="foto-tanaman" style="font-size:80px;">🌰</div>
+    <h2 id="status-tanaman">BENIH</h2>
+    <p>penyiraman: <b id="teks-porsi">0</b> kali</p>
+    
+    <button onclick="siramTanaman()" style="padding:10px; background:#0A841F; color:white; border:none; border-radius:8px;">
+      Siram Tanaman (+1)
+    </button>
+  </div>
+  
+  <script>
+    let air = 0;
+    
+    function siramTanaman() {
+      air++;
+      document.getElementById("teks-porsi").innerText = air;
+      
+      if (air <= 9) {
+        document.getElementById("foto-tanaman").innerText = "🌰";
+        document.getElementById("status-tanaman").innerText = "BENIH";
+      } else if (air <= 19) {
+        document.getElementById("foto-tanaman").innerText = "🌱";
+        document.getElementById("status-tanaman").innerText = "TUNAS";
+      } else {
+        document.getElementById("foto-tanaman").innerText = "🌸";
+        document.getElementById("status-tanaman").innerText = "BERBUNGA";
+      }
+    }
+  </script>
+  
+</body>
+
+</html>
